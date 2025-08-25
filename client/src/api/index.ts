@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { Card } from "./types/index";
+import type { Card } from "@type/index";
 
 export async function fetchCards(): Promise<Card[]> {
   const { data } = await axios.get("/api/cards");

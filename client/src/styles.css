@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.tile {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.front {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.back {
+  font-size: 16px;
+  color: #4b5563;
+  margin-top: 4px;
+}
+
+.notes {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #10b981;
+}
+
+.tokens {
+  font-family: monospace;
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.button-group {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+button.primary {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button.ghost {
+  background: transparent;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}

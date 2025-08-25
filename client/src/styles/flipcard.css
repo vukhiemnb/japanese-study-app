@@ -1,0 +1,104 @@
+/* Flip card layout */
+.flipcard-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
+
+  width: 100%;
+  margin: 0 auto; /* ← This centers the grid */
+  padding: 0 1rem; /* ← This adds spacing on small screens */
+  margin-top: 2rem;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Card container */
+.flip-card {
+  background-color: transparent;
+  width: 180px;
+  height: 150px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+/* Inner flipping part */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Flipping effect */
+.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Card faces */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+}
+
+/* Front side */
+.flip-card-front {
+  background-color: rgba(150, 148, 240, 0.2);
+  color: #222;
+}
+
+/* Back side */
+.flip-card-back {
+  background-color: #fff;
+  transform: rotateY(180deg);
+}
+
+/* Text-to-Speech Button */
+.tts-button {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+/* Folded corner effect */
+.flip-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-bottom-left-radius: 100% 100%;
+  box-shadow: -4px 4px 6px rgba(0, 0, 0, 0.2);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  transition: all 0.3s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.flip-card-front:hover .flip-corner {
+  width: 50px;
+  height: 50px;
+  box-shadow: -6px 6px 10px rgba(0, 0, 0, 0.25);
+}
